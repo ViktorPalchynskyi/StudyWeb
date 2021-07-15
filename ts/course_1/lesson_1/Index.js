@@ -1,18 +1,19 @@
-var girlName = 'Tanya';
-var obj;
-obj = { some: 10 };
-console.log('TS', obj);
-var dota = {
-    isTrash: true,
-    heroCount: 109,
-    youreNickName: 'V-Deus'
+var tmp = 'some';
+if (typeof tmp === 'string') {
+    console.log(tmp.toUpperCase());
+}
+var man = {
+    sex: 'male',
+    legCount: 2,
+    isAlive: true,
+    organs: ['Brain', 'Heart', 'Stomach', 'Liver', 'Penis']
 };
-console.log('Dota', dota);
-var number = dota.youreNickName;
-console.log('Number', number);
-var guesRandomNumber = function (gues) {
-    var randomNamber = Math.round((Math.random() * 10));
-    console.log('Random Number', randomNamber);
-    return randomNamber === gues;
+var woman = {
+    sex: 'wemale',
+    legCount: 2,
+    isAlive: true,
+    organs: ['Brain', 'Heart', 'Stomach', 'Liver', 'Vagina'],
+    hasVagina: true
 };
-console.log('RandomNumber', guesRandomNumber(4));
+console.log('Man', man);
+console.log('Woman', woman);

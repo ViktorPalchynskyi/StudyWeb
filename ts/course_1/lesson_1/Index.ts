@@ -1,96 +1,53 @@
-let girlName = 'Tanya';
-let obj: object;
+// Use write an interface that represents the data used in this function.
+// Annotate the function with your interface.
 
-
-
-obj = { some: 10 };
-
-console.log('TS', obj);
-
-const dota: {
-   isTrash: boolean,
-   heroCount: number,
-   youreNickName: string
-} = {
-   isTrash: true,
-   heroCount: 109,
-   youreNickName: 'V-Deus'
-};
-
-console.log('Dota', dota);
-
-const { youreNickName: number } = dota;
-
-console.log('Number', number);
-
-
-const guesRandomNumber = (gues: number): boolean => {
-   const randomNamber = Math.round((Math.random() * 10));
-   console.log('Random Number', randomNamber);
-   return randomNamber === gues;
+interface Fruit {
+   name: string;
+   color: string;
+   sweetness: number;
+   stars: number;
 }
 
-console.log('RandomNumber', guesRandomNumber(4));
-
-/* eslint-disable @typescript-eslint/no-unused-vars */
-// Adding Type Annotations
-// Replace the `unknown` type annotations with the correct type
-let guestCount: number = 50;
-
-let favoriteDessert: string = "Cheesecake";
-
-const ingredients: string[] = [
-   "butter",
-   "flour",
-   "baking powder",
-   "sugar",
-   "eggs",
-   "vanilla",
-   "salt"
-];
-
-// Correcting Variable Values
-const menu: {
-   courses: number;
-   veganOption: boolean;
-   drinkChoices: string[];
-} = {
-   courses: 5,
-   veganOption: true,
-   drinkChoices: ['ramen', 'sushi', 'mochi']
-};
-
-// Function Annotation
-const apple: {
-   name: string,
-   color: string,
-   sweetness: number
-} = {
-   name: "Apple",
-   color: "red",
-   sweetness: 80
-};
-
-function eatFruit(fruit: { name: string }) {
-   if (fruit.name === "Apple") {
-      console.log("I love apples!");
+function compileFruitReview(fruit: Fruit) {
+   let review: string = `This ${fruit.name} has a nice ${fruit.color} color to it.`;
+   if (fruit.sweetness < 50) {
+      review += " It could be a little sweeter.";
+   } else {
+      review += " When I tasted it, it was delicious.";
    }
-   console.log("Fruit is very tasty.");
+
+   review += ` I would give it ${fruit.stars} stars.`;
+
+   return review;
 }
 
-eatFruit(apple);
+console.log(
+   compileFruitReview({ name: "Apple", color: "red", sweetness: 80, stars: 4.5 })
+);
 
-function transformFruit(
-   fruitList: string[],
-   transformFunction: (fruitName: string) => string
-) {
-   return fruitList.map(transformFunction);
+// Extending Interfaces
+// Create an interface for an Apple by extending the Fruit interface you already made
+// Add a property to represent the variety of the apple, such as Fiji, Braeburn, etc.
+
+interface Apple extends Fruit {
+   variety: string;
 }
 
-const fruitList = ["Apple", "Banana", "Orange"];
+// Indexable Propertiesa
+// Create an interface that represents the data used in this function.
 
-function bakeFruit(fruitName: string) {
-   return `Baked ${fruitName}`;
+interface FruitCache {
+   [id: string]: Fruit;
 }
 
-const bakedFruit = transformFruit(fruitList, bakeFruit);
+const fruitCache: FruitCache = {};
+
+async function fetchFruitOrUseCache(id: string) {
+   if (fruitCache[id]) {
+      return fruitCache[id];
+   }
+   const response = await fetch(`https://example.com/fruit/${id}`);
+   const fruit: Fruit = await response.json();
+   fruitCache[id] = fruit;
+   return fruit;
+}
