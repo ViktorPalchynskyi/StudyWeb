@@ -1,53 +1,31 @@
-// Use write an interface that represents the data used in this function.
-// Annotate the function with your interface.
+enum Seasons {
+   winter,
+   spring,
+   summer,
+   autum,
+};
 
-interface Fruit {
-   name: string;
-   color: string;
-   sweetness: number;
-   stars: number;
-}
-
-function compileFruitReview(fruit: Fruit) {
-   let review: string = `This ${fruit.name} has a nice ${fruit.color} color to it.`;
-   if (fruit.sweetness < 50) {
-      review += " It could be a little sweeter.";
-   } else {
-      review += " When I tasted it, it was delicious.";
+function someEx(season: Seasons) {
+   switch (season) {
+      case Seasons.winter:
+         return 'WI';
+      case Seasons.spring:
+         return 'SP';
+      case Seasons.summer:
+         return 'SU';
+      case Seasons.autum:
+         return 'AU';
    }
-
-   review += ` I would give it ${fruit.stars} stars.`;
-
-   return review;
 }
 
-console.log(
-   compileFruitReview({ name: "Apple", color: "red", sweetness: 80, stars: 4.5 })
-);
+console.log('Where is my fucning function???', someEx(Seasons.autum));
 
-// Extending Interfaces
-// Create an interface for an Apple by extending the Fruit interface you already made
-// Add a property to represent the variety of the apple, such as Fiji, Braeburn, etc.
+function someEx2(someState: string): [initialState: string, useState: (newState: string) => void] {
+   const initialState: string = someState;
+   const useState = (newState: string): void => console.log(newState);
 
-interface Apple extends Fruit {
-   variety: string;
-}
+   return [initialState, useState];
+};
 
-// Indexable Propertiesa
-// Create an interface that represents the data used in this function.
-
-interface FruitCache {
-   [id: string]: Fruit;
-}
-
-const fruitCache: FruitCache = {};
-
-async function fetchFruitOrUseCache(id: string) {
-   if (fruitCache[id]) {
-      return fruitCache[id];
-   }
-   const response = await fetch(`https://example.com/fruit/${id}`);
-   const fruit: Fruit = await response.json();
-   fruitCache[id] = fruit;
-   return fruit;
-}
+const [state, useState] = someEx2('ulyalya');
+useState('Lya');
