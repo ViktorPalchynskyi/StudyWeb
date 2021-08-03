@@ -1,66 +1,54 @@
-class EdibleThing {
+interface Fruit {
    name: string;
    color: string;
-   constructor(name: string, color: string) {
-      this.name = name;
-      this.color = color;
+   nutritions: { name: string, amount: number }[];
+}
+
+type FruitNutritionList = Fruit['nutritions'];
+
+const nutritionsLisk: FruitNutritionList = [{ name: 'Vitamin A', amount: 13 }, { name: 'Vitamin C', amount: 44 }];
+
+interface Rectangle {
+   height: number;
+   width: number;
+}
+
+let rectangle: Rectangle = { height: 22, width: 42 };
+let rectangle2: typeof rectangle;
+
+type RectangleProperties = keyof Rectangle;
+
+const protertyName: RectangleProperties = 'height';
+console.log(rectangle[protertyName]);
+
+let rectangle3: Rectangle = { height: 44, width: 87 } as const;
+
+
+function tmp(input: string, some: number): [number, number];
+function tmp(input: unknown[], some: number): [number, number];
+function tmp(input: any, some: any): [number, number] {
+   return [input.length, some + 122];
+};
+
+console.log('TMP:', tmp('Ya rot tvoy ebal', 11));
+console.log('TMP:', tmp([12, 321, 23, 55, 123, 3, 123, 12312], 88));
+
+
+interface Vanila {
+   cost: number;
+   isVanila: boolean;
+}
+
+const vanilaIcecream = {
+   cost: 23,
+   isVanila: true,
+   eat(this: Vanila) {
+      if (this.isVanila) {
+         console.log('Ahhh yeaa');
+      } else {
+         console.log('Ahhh shit');
+      }
    }
 }
 
-class Fruit extends EdibleThing {
-   sweetness: number;
-
-   constructor(name: string, color: string, sweetness: number) {
-      super(name, color);
-      this.sweetness = sweetness;
-   }
-
-   fullName(): string {
-      const isSweet: boolean = this.sweetness > 50;
-      return `${isSweet ? 'Sweet' : ''} ${this.color} ${this.name}`;
-   };
-}
-
-const apple = new Fruit('Apple', 'Red', 55);
-
-console.log(apple.fullName());
-
-const fruitBasket: Fruit[] = [];
-
-fruitBasket.push(new Fruit('Banana', 'Yellow', 103));
-console.log(fruitBasket);
-
-class Vegetable {
-   static timeToCook: number = 5;
-   static cookVegetable(vegetable: Vegetable): void {
-      setTimeout(() => console.log(`Cooked ${vegetable.name}`), Vegetable.timeToCook * 1000);
-   }
-   name: string;
-   constructor(name: string) {
-      this.name = name;
-   }
-}
-
-Vegetable.cookVegetable(new Vegetable('Tomato'));
-
-abstract class Some {
-   name: string;
-   abstract doSomething(): void;
-
-   constructor(name: string) {
-      this.name = name;
-   }
-}
-
-class Fruit2 extends Some {
-   constructor(name: string) {
-      super(name);
-   }
-   doSomething() {
-      console.log(`Yum. ${this.name}s are tasty.`);
-   }
-}
-
-const fruit: Fruit2 = new Fruit2('Mellon');
-fruit.doSomething();
-
+vanilaIcecream.eat();
