@@ -1,37 +1,32 @@
-// const canvas = document.getElementById("canvas") as HTMLCanvasElement;
-// const context = canvas.getContext("2d");
 
+type AppleStr = 'Apple';
 
-interface Fruit {
-   name: string;
-   color: string;
-   sweetness: number;
-}
-interface Vegetable {
-   name: string;
-   color: string;
-   tenderness: number;
-}
+type isString<T> = T extends string ? string : never;
 
+type str = isString<AppleStr>;
+type some = isString<0>
 
+type NotNullabel<T> = T extends undefined | null ? never : T;
+type NonNullabelString = NotNullabel<string | undefined | null>;
 
-function isFruit(maybeFruit: Fruit | Vegetable): maybeFruit is Fruit {
-   if ("sweetness" in maybeFruit) return true;
-   return false;
-}
+type ExcludeLetter<T, U> = T extends U ? never : T;
 
-const tomato = { name: "Tomato", color: "red", tenderness: 70 };
-if (isFruit(tomato)) {
-   console.log(`Tomato is ${tomato.sweetness}% sweet.`);
-} else {
-   console.log(`Tomato is ${tomato.tenderness}% tender.`);
-}
+type FavoriteLetters = "v" | "i" | "k" | "t" | "o" | "r";
 
+type Vowels = "a" | "e" | "i" | "o" | "u" | "y";
 
-function assertIsFruit(maybeFruit: any): asserts maybeFruit is Fruit {
-   if (!("sweetness" in maybeFruit)) throw new Error('This shit want do!');
-}
+type NonFavorite = ExcludeLetter<Vowels, FavoriteLetters>;
 
-assertIsFruit(tomato);
+function factorial(n: number): number {
+   if (n === 1) return 1;
+   return n * factorial(n - 1);
+};
 
-tomato;
+console.log(factorial(5));
+
+type AnyFunc = (...arg: any) => any;
+type MyReturnType<T extends AnyFunc> = T extends (...arg: any) => infer R ? R : any;
+
+type ParseIntReturn = ReturnType<typeof Number.parseInt>;
+
+type ToStringReturn = ReturnType<ParseIntReturn["toString"]>;
