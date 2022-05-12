@@ -24,7 +24,7 @@ class Graph {
       const visited = {};
       const adjacencyList = this.adjacencyList;
 
-      (function dfs(vertex){
+      (function dfs(vertex) {
           if(!vertex) return null;
           visited[vertex] = true;
           result.push(vertex);
