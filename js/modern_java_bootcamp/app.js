@@ -1,91 +1,118 @@
-// const arr1 = ['viktor', 'misha'];
-// const arr2 = ['lena', 'tanya'];
-const arr3 = ['arina', 'igor', 'denis'];
-
-// console.log(arr1.reverse());;
-// console.log(Object.keys(arr1));
-
-const game = {
-   'Dota2': 8,
-   'LoL': 9,
-   'WOT': 8,
-   'WOW': 10,
-}
-
-let someShit = 'ohhhh Shit here we go again'
-function some1() {
-   function some2() {
-      function some3() {
-         console.log('hello from some', someShit.toUpperCase());
-      }
-      some3();
+const warriorsGames = [{
+   awayTeam: {
+     team: 'Golden State',
+     points: 119,
+     isWinner: true
+   },
+   homeTeam: {
+     team: 'Houston',
+     points: 106,
+     isWinner: false
    }
-   some2();
-}
-function callThreeTimes(f) {
-   f();
-   f();
-   f();
-}
-
-function sayHello() {
-   console.log(`Hello my lord Viktor! Its nice to see you!`);
-}
-
-function isValidStr(str) {
-   return function (length) {
-      return str.length <= length;
+ },
+ {
+   awayTeam: {
+     team: 'Golden State',
+     points: 105,
+     isWinner: false
+   },
+   homeTeam: {
+     team: 'Houston',
+     points: 127,
+     isWinner: true
    }
-}
+ },
+ {
+   homeTeam: {
+     team: 'Golden State',
+     points: 126,
+     isWinner: true
+   },
+   awayTeam: {
+     team: 'Houston',
+     points: 85,
+     isWinner: false
+   }
+ },
+ {
+   homeTeam: {
+     team: 'Golden State',
+     points: 92,
+     isWinner: false
+   },
+   awayTeam: {
+     team: 'Houston',
+     points: 95,
+     isWinner: true
+   }
+ },
+ {
+   awayTeam: {
+     team: 'Golden State',
+     points: 94,
+     isWinner: false
+   },
+   homeTeam: {
+     team: 'Houston',
+     points: 98,
+     isWinner: true
+   }
+ },
+ {
+   homeTeam: {
+     team: 'Golden State',
+     points: 115,
+     isWinner: true
+   },
+   awayTeam: {
+     team: 'Houston',
+     points: 86,
+     isWinner: false
+   }
+ },
+ {
+   awayTeam: {
+     team: 'Golden State',
+     points: 101,
+     isWinner: true
+   },
+   homeTeam: {
+     team: 'Houston',
+     points: 92,
+     isWinner: false
+   }
+ }
+]
 
-const str1 = isValidStr('Chi Da Chi Sho');
-// console.log(str1(12));
-// console.log(str1(4));
-// console.log(str1(14));
-const price = [100, 123.52, 5400, 243.21, 23, 9000, 99.99, 22.12, 2999];
-
-// sort мутирует изначальный массив.
-// console.log('sort', price.sort((a, b) => b - a));
-
-const votes = ['y', 'y', 'n', 'n','y','n','n','y','y','n','n','y','y']
-
-const votesObj = votes.reduce((tally, curValue) => {
-   tally[curValue] = (tally[curValue] || 0) + 1;
-   return tally;
-}, {});
-
-console.log('votesObj', votesObj);
-
-const math = {
-   sum(...nums) { return nums.reduce((acc, cur) => acc + cur) },
-   mult(...nums) { return nums.reduce((acc, cur) => acc * cur) }
+const makeChart = (games, targetTeam) => {
+   const ulParent = document.createElement('ul');
+   const title = document.createElement('h1');
+   title.innerText = targetTeam;
+   ulParent.prepend(title);
+   for (const game of games) {
+      const gameLi = document.createElement('li'); 
+      gameLi.innerHTML = getScoreLine(game);
+      gameLi.classList.add(checkWinner(game, targetTeam) ? 'win' : 'loss');
+      ulParent.appendChild(gameLi);
+   }
+   return ulParent;
 };
 
-// console.log({
-//    name: 'rofl',
-//    [math.sum(23,5212,321,442,123,1122,198)]: 'some',
-//    [math.mult(23,5212,321)]: 'some mult',
-// });
+const getScoreLine = ({ awayTeam, homeTeam }) => {
+   const { team: hTeam , points: hPoints } = homeTeam;
+   const { team: aTeam , points: aPoints } = awayTeam;
+   const teamNames = `${ aTeam } @ ${ hTeam }`;
+   let scoreLine;
+   aPoints > hPoints ? 
+         scoreLine = `<b>${ aPoints }</b>-${ hPoints }`: 
+         scoreLine = `${ aPoints }-<b>${ hPoints }</b>`;
+   return `${ teamNames } ${scoreLine }`;
+};
 
-// Создай объект с 2 методами, в одном будет интервал, в другой будет выключение интервала. Проробатать ключевое слово this и стрелочные функции.  
-
-const funcObj = {
-   random: ['hello', 'fuck off', 'hi', 'goodbye', 'bye', 'greeting', 'asshole'],
-   getRandom() {
-      const randomPhrase = Math.floor(Math.random() * this.random.length);
-      return this.random[randomPhrase];
-   },
-   randomInterval() {
-      this.intervarId = setInterval(() => console.log(this.getRandom()), 3 * 1000);
-   },
-   cleareRandomInterval() {
-     clearInterval(this.intervarId); 
-   }
+const checkWinner = ({ awayTeam, homeTeam }, targetTeam) => {
+   const target = homeTeam.team === targetTeam ? homeTeam : awayTeam;
+   return target.isWinner;
 }
 
-funcObj.randomInterval()
-
-setTimeout(() => {
-   console.log('STOP RANDOM SHIT!!!!');
-   funcObj.cleareRandomInterval()
-}, 12 * 1000)
+document.body.appendChild(makeChart(warriorsGames, 'Houston'));
+document.body.appendChild(makeChart(warriorsGames, 'Golden State'));
