@@ -1,36 +1,31 @@
-const el = document.querySelector('h1');
 const btn = document.querySelector('button');
 
-el.addEventListener('mouseover', function(){this.style.color = 'coral'});
-el.addEventListener('mouseout', function(){this.style.color = 'black'});
+// setTimeout(() => {
+//    btn.style.transform = `translateX(100px)`
+//    setTimeout(() => {
+//       btn.style.transform = `translateX(200px)`
+//    }, 1 * 1000);
+// }, 1 * 1000);
 
-btn.addEventListener('mouseover', function() {
-   const x = Math.floor(Math.random() * (window.innerWidth));
-   const y = Math.floor(Math.random() * (window.innerHeight));
-   this.style.transform = `translate(${x}px, ${y}px)`;
-});
+const moveX = (element, amount, delay) => {
+   return new Promise((resolve, reject) => {
+      setTimeout(() => {
+         const bodyBoundary = document.body.clientWidth;
+         const currentRight = btn.getBoundingClientRect().right;
+         const currentLeft = btn.getBoundingClientRect().left;
+         if(currentRight + amount > bodyBoundary) {
+            reject('GG WP');
+         } else {
+            element.style.transform = `translateX(${currentLeft + amount}px)`;
+            resolve();
+         }
+      }, delay);
+   });   
+};
 
-
-btn.addEventListener('click', function() {
-   console.log('action');
-   document.body.style.backgroundColor = 'green';
-});
-
-document.body.addEventListener('keypress', (event) => {
-   if (event.key === 'c') return console.log('Ahhhh Shit. Here we go again.') 
-});
-
-document.body.addEventListener('keydown', (event) => {
-   if (event.key === 'j') return console.log('Ahhhh Shit. Fuck!.') 
-});
-
-document.body.addEventListener('keydown', (event) => {
-   if (event.key === 'j') return console.log('Ahhhh Shiiiiit') 
-});
-
-const form = document.querySelector('#signup-form');
-form.addEventListener('submit', function(event) {
-   event.preventDefault();
-   alert('Rem');
-   console.dir(this);
-})
+moveX(btn, 500, 1000)
+   .then(() => {
+      return moveX(btn, 500, 1000);
+   })
+   .then(() => console.log('second'))
+   .catch(() => alert('GG WP'));
