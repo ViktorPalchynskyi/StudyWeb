@@ -1,0 +1,35 @@
+[
+  {
+    "email": "test@test.com"
+  },
+  {
+    "email": "test1123@test.com",
+    "password": "123",
+    "id": "8beeb3e5"
+  },
+  {
+    "email": "test1124123@test.com",
+    "password": "123",
+    "id": "b7c489b9"
+  },
+  {
+    "email": "palchinskij19@gmail.com",
+    "password": "1e7fb804b0a70ad87774eadcaf258dd6d468ab7bb5e0a7d284c178b2a15c6c1b97053c364c7a1770a1b373c9592a950af1e572cd839005fdd417a1ad93472f71.3ad8df2f70d00525",
+    "id": "74b308e5"
+  },
+  {
+    "email": "test10@test.com",
+    "password": "5d94481b99059a4658ea28eff3ab1edd239b9f7cc0a34e0819c539d29a4a24f2580d86b55bf534ab93d6168accb45f821fba655da995b6b8cf4d7ada37be9a91.1da28fe1f9a274a6",
+    "id": "02a89db4"
+  },
+  {
+    "email": "test11@test.com",
+    "password": "447264dbc8d317bd3ec30b768619709ae9f7d998412af530bbcf43b131eff2c1d7bc26277143ec60fe8305f28bd23798c7cc0fe5033a88128da93dab5f393d60.5804684284051e78",
+    "id": "e9a6a0c3"
+  },
+  {
+    "email": "t.sarancha@sharksw.com",
+    "password": "3d17a67dfdb71cb7c3abecad951438bc7693e3c823710d7a96dde26c2e06ddfa66b31949a29ad626ce8f77a29ffcb12ce14f98dc868bb78bf43d2638da60353f.82a24c106a6189e8",
+    "id": "a0640a58"
+  }
+]
