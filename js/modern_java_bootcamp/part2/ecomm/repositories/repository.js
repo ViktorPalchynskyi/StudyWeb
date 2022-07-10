@@ -63,6 +63,4 @@ module.exports = class Repository {
          if (found) return record;
       }
    }
-
-   
 }
