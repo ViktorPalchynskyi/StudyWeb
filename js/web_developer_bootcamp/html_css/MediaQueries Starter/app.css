@@ -8,6 +8,8 @@ h1 {
 }
 nav {
     font-size: 1.5em;
+    display: flex;
+    justify-content: space-between;
 }
 
 ul,li {
@@ -16,5 +18,64 @@ ul,li {
     padding: 0;
 }
 
+ul {
+    display: flex;
+    border: 1px solid black;
+    flex: 1;
+    max-width: 50%;
+    justify-content: space-evenly;
+}
 
 
+/* @media (min-width: 600px) and (max-width: 800px) {
+    h1 {
+        color: coral;
+    }
+} */
+
+@media (min-width: 500px) {
+    h1 {
+        color: aquamarine;
+    }
+}
+
+@media (min-width: 700px) {
+    h1 {
+        color: skyblue;
+    }
+}
+
+@media (min-width: 1000px) {
+    h1 {
+        color: coral;
+    }
+}
+
+@media (min-width: 1200px) {
+    h1 {
+        color: peachpuff;
+    }
+}
+
+@media (orientation: landscape), (min-width: 850px) {
+    body {
+        background-color: pink;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 4em;
+    }
+    nav, nav ul {
+        flex-direction: column;
+        align-items: center;
+        border: none;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 3em;
+    }
+}
