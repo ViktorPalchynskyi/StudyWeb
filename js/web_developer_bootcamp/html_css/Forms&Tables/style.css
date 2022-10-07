@@ -9,3 +9,21 @@ thead {
 tbody {
    background-color: coral;
 }
+
+.main { 
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.main_div {
+   width: 25%;
+   margin-bottom: 15px;
+   height: 30px; 
+   display: flex;
+}
+
+label {
+   flex-grow: 1;
+   align-self: center;
+}

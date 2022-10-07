@@ -5,105 +5,60 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="./style.css">
-   <title>Table</title>
+   <title>Forms</title>
 </head>
 <body>
-   <h1>Table shit</h1>
-   <table>
-      <thead>
-         <tr>
-            <th colspan="2">Animal</th>
-            <th rowspan="2">Average mass</th>
-            <th rowspan="2">Max mass</th>
-            <th rowspan="2">Flighted</th>
-         </tr>
-         <tr>
-            <th>Definition</th>
-            <th>Population</th>
-         </tr>
-      </thead>
-      <tbody>
-         <tr>
-            <td>Ostrich</td>
-            <td>105</td>
-            <td>156</td>
-            <td>no</td> 
-         </tr>
-         <tr>
-            <td>Somali Ostrich</td>
-            <td>90</td>
-            <td>130</td>
-            <td>no</td> 
-         </tr>
-         <tr>
-            <td>Wild Turkey</td>
-            <td>13</td>
-            <td>39</td>
-            <td>yes</td>
-         </tr>
-   </tbody>
-   </table>
-   <hr>
-   <table>
-      <caption>Second Table</caption>
-      <thead>
-         <tr>
-            <th rowspan="2">Animal</th>
-            <th colspan="2">Average Mass</th>
-            <th rowspan="2">Flighted</th>
-         </tr>
-         <tr>
-            <th>KG</th>
-            <th>LB</th>
-         </tr>
-      </thead>
-      <tbody>
-         <tr>
-            <td>Ostrich</td>
-            <td>105</td>
-            <td>230</td>
-            <td>no</td> 
-         </tr>
-         <tr>
-            <td>Somali Ostrich</td>
-            <td>90</td>
-            <td>200</td>
-            <td>no</td> 
-         </tr>
-         <tr>
-            <td>Wild Turkey</td>
-            <td>13</td>
-            <td>29.8</td>
-            <td>yes</td>
-         </tr>
-      </tbody>
-   <table>
-   <hr>
-   <table>
-      <thead>
-          <tr>
-              <th>Subscription</th>
-              <th>Price</th>
-              <th>Support</th>
-          </tr>
-      </thead>
-      <tbody>
-         <tr>
-            <td>Free</td>
-            <td>Free</td>
-            <td>N/A</td>
-         </tr>
-         <tr>
-            <td>Personal</td>
-            <td>$9.99</td>
-            <td>Weekdays</td>
-         </tr>
-         <tr>
-            <td>Business</td>
-            <td>$49.99</td>
-            <td>24/7</td>
-         </tr>
-      </tbody>
-  </table>
+   <h1>Forms shit</h1>
+   <form action="/vagos" class="main" autocomplete="on">
+      <h2>Fancy form</h2>
+      <div class="main_div">
+         <label for="textIn">Username:</label>
+         <input id="textIn" required type="text"  placeholder="type some text" name="username">
+      </div>
+      <div class="main_div">
+         <label for="passwIn">Password:</label>
+         <input id="passwIn" type="password" placeholder="add a password" name="password">
+      </div>
+      <div class="main_div">
+         <label for="numIn">Number:</label>
+         <input id="numIn" type="number" placeholder="pick some number" name="num">
+      </div>
+      <div class="main_div">
+         <input type="radio" id="radioOne" name="oneWay" value="belowHuman">
+         <label for="radioOne">Monkey</label>
+         
+      </div>
+      <div class="main_div">
+         <input type="radio" id="radioTwo" name="oneWay" checked value="uponHuman">
+         <label for="radioTwo">Übermensch</label>
+      </div>
+      <div class="main_div">
+         <input type="checkbox" id="checkTwo" name="checkOne" checked>
+         <label for="checkTwo">JJJJ</label>
+      </div>
+      <div class="main_div">
+         <input type="checkbox" id="checkTwo" name="checkTwo" checked>
+         <label for="checkTwo">EEE</label>
+      </div>
+      <div class="main_div">
+         <label for="bookSelect">Select youre Book</label>
+         <select name="book" id="bookSelect">
+            <option value="zaratustra">Thus spoke Zaratustra</option>
+            <option value="capital">Capital</option>
+            <option value="anti">Anti-Duhring</option>
+         </select>
+      </div>
+      <div class="main_div"><input type="range"  id="rangeTest" name="testRange" min="10" max="1000"><label for="rangeTest">Show me something</label></div>
+      <div class="main_div">
+         <textarea name="someText" id="someText" cols="30" rows="10">
+
+         </textarea>
+      </div>
+      <button type="submit">Click Me</button>
+   </form>
+   <form action="https://www.reddit.com/search/">
+      <input type="text" name="q" placeholder="Why me?">
+      <button type="submit">Search Reddit</button>
+   </form>
 </body>
 </html>
