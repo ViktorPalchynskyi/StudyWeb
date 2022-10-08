@@ -1,0 +1,11 @@
+.circle {
+    width: 350px;
+    height: 350px;
+    background-color: skyblue;
+    transition: all 1s ease-out 0.25s;
+}
+
+.circle:hover {
+    background-color: coral;
+    border-radius: 50%;
+}
