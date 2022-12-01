@@ -1,0 +1,5 @@
+node_modules
+dist
+pixman-0.30.0
+pixman-0.40.0
+.env
