@@ -1,6 +1,7 @@
 import express from 'express';
 
 import { userRouter } from './user/user.router.js';
+import { adminRouter } from './admin/admin.router.js';
 
 export const indexRouter = express.Router();
 
@@ -16,4 +17,4 @@ indexRouter
       `);
    })
    .use('/user', userRouter)
-   .use('/admin', (req,res) => res.status(404).send({error: 'Not ready'}));
+   .use('/admin', adminRouter);
