@@ -8,11 +8,7 @@ export const indexRouter = express.Router();
 indexRouter
    .get('/', (req, res) => {
       res.send(`
-      <form action="/user/login" method="get">
-         <label for="POST-name">Name:</label>
-         <input id="POST-name" type="text" name="name">
-         <input type="submit" value="Save">
-      </form>
+      <h1>Hello there!</h1>
       <img src="img/sirius.jpg">
       `);
    })

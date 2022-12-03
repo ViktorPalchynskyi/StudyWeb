@@ -20,6 +20,7 @@ const errorHandler = (err, req, res, next) => {
 }
 console.log('process.env', process.env.SERVER_PORT);
 
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
 app.use(helmet());
 app.use(myLogger);

@@ -8,6 +8,10 @@
     "start": "node src/index.js",
     "dev": "nodemon src/index.js"
   },
+  "_moduleAliases": {
+    "@pet/config": "src/config/index.js",
+    "@pet": "src/some.js"
+  },
   "author": "Viktor Palchynskyi",
   "license": "ISC",
   "dependencies": {
@@ -15,7 +19,11 @@
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "helmet": "^6.0.1"
+    "helmet": "^6.0.1",
+    "module-alias": "^2.2.2",
+    "mysql2": "^2.3.3",
+    "pg": "^8.8.0",
+    "sequelize": "^6.26.0"
   },
   "type": "module",
   "devDependencies": {
