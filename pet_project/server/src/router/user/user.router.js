@@ -10,22 +10,26 @@ userRouter
    .get('/login', (req, res) => res.send(`
    <form action="/user/settings" method="post">
          <label for="POST-name">Name:</label>
-         <input id="POST-name" type="text" name="userName">
-         <label for="POST-name">Name:</label>
-         <input id="POST-name" type="text" name="userLastName">
-         <label for="POST-age">userLastName:</label>
-         <input id="POST-age" type="text" name="userAge">
+         <input id="POST-name" type="text" name="firsName">
+         <label for="POST-name">Last Name:</label>
+         <input id="POST-name" type="text" name="lastName">
+         <label for="POST-age">Age:</label>
+         <input id="POST-age" type="text" name="age">
          <input type="submit" value="Save">
       </form>`
    ))
    .post('/settings', async (req, res) => {
-      const { userName, userLastName, userAge } = req.body;
-      func();
+      const { firsName, lastName, age } = req.body;
+      const response = await UserRepository.findOrCreate({
+         firsName,
+         lastName,
+         age,
+      });
       res.send(`
          <h1>Loggen in</h1>
-         <p>Youre name ${userName}</p>
-         <p>Youre last name ${userLastName}</p>
-         <p>Youre age is ${userAge}</p>
+         <p>Youre name ${firsName}</p>
+         <p>Youre last name ${lastName}</p>
+         <p>Youre age is ${age}</p>
       `);
    });
 

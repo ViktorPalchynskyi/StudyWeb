@@ -2,12 +2,7 @@ import { DataTypes } from 'sequelize';
 
 export const UserFactory = (sequelize) => {
    const UserModel = sequelize.define('user', {
-      userId: {
-         type: DataTypes.UUID,
-         primaryKey: true,
-         allowNull: false,
-      },
-      firstName: {
+      firsName: {
          type: DataTypes.STRING,
          allowNull: true,
       },
