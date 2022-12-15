@@ -1,9 +1,8 @@
-import { router } from "./routes";
-import { RouterProvider } from "react-router";
+import Router from "./routes/index";
 
 function App() {
   return (
-    <RouterProvider router={router}/>
+    <Router/>
   );
 }
 

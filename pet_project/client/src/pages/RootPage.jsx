@@ -38,16 +38,16 @@ const RootPage = () => {
                      <Link to={`calc`}>Your Calc</Link>
                   </li>
                   <li>
-                     <Link to={`welcome`}>Welcome</Link>
+                     <Link to={`welcome/:type`}>Welcome</Link>
                   </li>
                   <li>
-                     <Link to={`welcome/func`}>Welcome 322</Link>
+                     <Link to={`welcome/class`}>Welcome 322</Link>
                   </li>
                </ul>
             </nav>
          </div>
          <div id="detail">
-            <Outlet />
+            <Outlet context={{ name: 'Viktor' }} />
          </div>
       </>
    );
