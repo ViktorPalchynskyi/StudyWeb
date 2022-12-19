@@ -47,6 +47,7 @@ const RootPage = () => {
             </nav>
          </div>
          <div id="detail">
+            <h1>Main Page</h1>
             <Outlet context={{ name: 'Viktor' }} />
          </div>
       </>

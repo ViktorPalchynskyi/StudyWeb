@@ -12,8 +12,10 @@ const Router = () => {
          <Routes>
             <Route path='/' element={<RootPage />} >
                <Route path="/name" element={<NameForm />} />
-               <Route path="/welcome/class" element={<WelcomeClassComponent />} />
-               <Route path="/welcome/:type" element={<WelcomeFunctionComponen />} />
+               <Route path='/welcome'>
+                  <Route path="class" element={<WelcomeClassComponent />} />
+                  <Route path=":type" element={<WelcomeFunctionComponen />} />
+               </Route>
                <Route path="/calc" element={<Calculator />} />
                <Route path="*" element={<ErrorPage />} />
             </Route>
