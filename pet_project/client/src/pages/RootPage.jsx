@@ -48,7 +48,7 @@ const RootPage = () => {
          </div>
          <div id="detail">
             <h1>Main Page</h1>
-            <Outlet context={{ name: 'Viktor' }} />
+            <Outlet context={{ name: 'Viktor', age: 24 }} />
          </div>
       </>
    );
