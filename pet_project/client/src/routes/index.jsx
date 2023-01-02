@@ -5,6 +5,7 @@ import WelcomeFunctionComponen from '../pages/WelcomeFunctionComponen.jsx';
 import NameForm from '../pages/NameForm';
 import Calculator from '../tempExample/Calculator';
 import ErrorPage from '../pages/ErrorPage';
+import CalcLayout from '../tempExample/CalcLayout';
 
 const Router = () => {
    return (
@@ -19,6 +20,9 @@ const Router = () => {
                <Route path="/calc" element={<Calculator />} />
                <Route path="*" element={<ErrorPage />} />
             </Route>
+         </Routes>
+         <Routes location='/calc'>
+            <Route path='/calc' element={<CalcLayout />} />
          </Routes>
       </BrowserRouter>
    )
