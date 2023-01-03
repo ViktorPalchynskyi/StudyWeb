@@ -12,13 +12,14 @@ const Router = () => {
       <BrowserRouter>
          <Routes>
             <Route path='/' element={<RootPage />} >
-               <Route path="/name" element={<NameForm />} />
+               <Route path='/name' element={<NameForm />} />
+               <Route path='/user/*' element={<UserRouter />} />
                <Route path='/welcome'>
-                  <Route path="class" element={<WelcomeClassComponent />} />
-                  <Route path=":type" element={<WelcomeFunctionComponen />} />
+                  <Route path='class' element={<WelcomeClassComponent />} />
+                  <Route path=':type' element={<WelcomeFunctionComponen />} />
                </Route>
-               <Route path="/calc" element={<Calculator />} />
-               <Route path="*" element={<ErrorPage />} />
+               <Route path='/calc' element={<Calculator />} />
+               <Route path='*' element={<ErrorPage />} />
             </Route>
          </Routes>
          <Routes location='/calc'>

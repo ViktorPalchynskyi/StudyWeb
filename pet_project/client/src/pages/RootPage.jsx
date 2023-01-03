@@ -43,6 +43,9 @@ const RootPage = () => {
                   <li>
                      <Link to={`welcome/class`}>Welcome 322</Link>
                   </li>
+                  <li>
+                     <Link to={`user`}>User</Link>
+                  </li>
                </ul>
             </nav>
          </div>
