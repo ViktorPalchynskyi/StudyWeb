@@ -1,7 +1,9 @@
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import '../App.css';
 
 const RootPage = () => {
+   const handleLinkStyle = ({ isActive }) => ({ backgroundColor: isActive ? 'coral' : '' });
+
    return (
       <>
          <div id="sidebar">
@@ -32,19 +34,19 @@ const RootPage = () => {
             <nav>
                <ul>
                   <li>
-                     <Link to={`name`}>Your Name</Link>
+                     <NavLink style={handleLinkStyle} to={`name`}>Your Name</NavLink>
                   </li>
                   <li>
-                     <Link to={`calc`}>Your Calc</Link>
+                     <NavLink style={handleLinkStyle} to={`calc`}>Your Calc</NavLink>
                   </li>
                   <li>
-                     <Link to={`welcome/:type`}>Welcome</Link>
+                     <NavLink style={handleLinkStyle} to={`welcome/:type`}>Welcome</NavLink>
                   </li>
                   <li>
-                     <Link to={`welcome/class`}>Welcome 322</Link>
+                     <NavLink style={handleLinkStyle} to={`welcome/class`}>Welcome 322</NavLink>
                   </li>
                   <li>
-                     <Link to={`user`}>User</Link>
+                     <NavLink style={handleLinkStyle} to={`user`}>User</NavLink>
                   </li>
                </ul>
             </nav>
