@@ -6,6 +6,7 @@ import NameForm from '../pages/NameForm';
 import Calculator from '../tempExample/Calculator';
 import ErrorPage from '../pages/ErrorPage';
 import CalcLayout from '../tempExample/CalcLayout';
+import UserRouter from './UserRouter';
 
 const Router = () => {
    return (
