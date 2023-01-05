@@ -1,14 +1,13 @@
-import React from "react";
-import { ThemeContext } from "../context/ThemeContext";
-import { THEMES } from "../themes";
-import ThemeButton from "./contextExample/ThemeButton";
-import Toolbar from "./contextExample/Toolbar";
+import React from 'react';
+import { ThemeContext } from '../context/ThemeContext';
+import { THEMES } from '../themes';
+import ThemeButton from './contextExample/ThemeButton';
+import Toolbar from './contextExample/Toolbar';
+import ThemeTogglerButton from './contextExample/ThemeTogglerButotn';
 
 class WelcomeClassComponent extends React.Component {
    constructor(props) {
       super(props);
-      this.state = { date: new Date(), theme: THEMES.light };
-
       this.toggleTheme = () => {
          this.setState(state => ({
             theme:
@@ -16,6 +15,11 @@ class WelcomeClassComponent extends React.Component {
                   ? THEMES.light
                   : THEMES.dark,
          }));
+      };
+      this.state = {
+         date: new Date(),
+         theme: THEMES.light,
+         toggleTheme: this.toggleTheme,
       };
    }
 
@@ -42,12 +46,16 @@ class WelcomeClassComponent extends React.Component {
          <div>
             <h2>Hello there!</h2>
             <p>{this.state.date.toLocaleTimeString()}</p>
-            <ThemeContext.Provider value={this.state.theme}>
+            <ThemeContext.Provider value={this.state}>
                <Toolbar changeTheme={this.toggleTheme} />
                <ThemeButton >
                   Click me
                </ThemeButton>
+               <ThemeTogglerButton />
             </ThemeContext.Provider>
+            <ThemeButton >
+               Default Provider
+            </ThemeButton>
          </div>
       )
    }
