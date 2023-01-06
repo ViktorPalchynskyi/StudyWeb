@@ -1,4 +1,5 @@
 import React from "react";
+import ErrorBoundary from "../ErrorBoundary";
 
 class NameForm extends React.Component {
    constructor(props) {
@@ -28,6 +29,9 @@ class NameForm extends React.Component {
    };
 
    render() {
+      if (this.state.textValue) {
+         throw new Error('Fuck you, man!');
+      }
       return (
          <div>
             <form onSubmit={this.handleSubmit}>

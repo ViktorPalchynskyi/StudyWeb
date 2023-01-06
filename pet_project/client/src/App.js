@@ -1,8 +1,8 @@
-import Router from "./routes/index";
+import Router from './routes/index';
 
 function App() {
   return (
-    <Router/>
+      <Router/>
   );
 }
 
