@@ -3,7 +3,7 @@ import {
    toCelsius,
    toFahrenheit,
    tryConvert,
-} from "../helpers/temperatureConvert";
+} from "../../helpers/temperatureConvert";
 import TemperatureInput from "./TemperatureInput";
 import BoilingVerdict from "./BoilingVerdict";
 

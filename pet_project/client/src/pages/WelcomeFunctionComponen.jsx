@@ -1,5 +1,6 @@
 import { useOutletContext, useParams } from 'react-router';
 import { v4 as uuidv4 } from 'uuid';
+import CutomRefInput from './refExample/RefExapleDOM';
 
 const WelcomeFunctionComponen = ({ name, age }) => {
    const { type } = useParams();
@@ -14,6 +15,7 @@ const WelcomeFunctionComponen = ({ name, age }) => {
          <ul>
             {names.map((name) => <li key={uuidv4()}>{name}</li>)}
          </ul>
+         <CutomRefInput />
       </div>
    )
 };
