@@ -14,7 +14,7 @@
     "@handlebars/allow-prototype-access": "^1.0.3",
     "express": "^4.16.4",
     "express-handlebars": "^3.0.2",
-    "mongoose": "^5.11.13",
+    "mongoose": "^5.13.15",
     "uuid": "^3.3.2"
   },
   "devDependencies": {
