@@ -9,8 +9,8 @@ class CutomRefInput extends React.Component {
    }
 
    componentDidMount() {
-      // console.log(this.classTextInput.current);
-      // this.classTextInput.current.focusTextInput();
+      console.log(this.classTextInput.current);
+      this.classTextInput.current.color = 'coral';
    }
 
 
@@ -37,10 +37,11 @@ class CutomRefInput extends React.Component {
                value='focus on text area'
                onClick={this.focusTextInput}
             />
-            {/* <CutomClassRefInput ref={this.classTextInput} /> */}
+            <CutomClassRefInput ref={this.classTextInput} />
          </div>
       )
    }
 }
 
 export default CutomRefInput;
+

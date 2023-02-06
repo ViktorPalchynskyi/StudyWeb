@@ -6,7 +6,11 @@ class CutomClassRefInput extends React.Component {
    }
 
    render() {
-      return <input type='text' />
+      return (
+         <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque nobis nostrum eaque eligendi blanditiis obcaecati consequatur. Labore minus non ducimus similique porro dolorem cum sit, in laborum, quod error minima?
+         </div>
+      )
    }
 }
 
