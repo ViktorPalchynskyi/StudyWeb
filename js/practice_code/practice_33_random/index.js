@@ -116,10 +116,20 @@ class CoffeeMachin {
    }
 }
 
-const superCM = new CoffeeMachin(150);
 
-superCM.power = 123;
-// superCM.#checkWatter();
-superCM.#watterLimit = 1000;
+class MyArr extends Array {
 
-console.log('superCM.power', superCM.power);
+   isEmpty() {
+      return this.lenth > 0;
+   }
+
+   static get [Symbol.species] () {
+      return Array;
+   }
+
+}
+
+const myArr = new MyArr(2,3,4,5,6,10);
+const filterd = myArr.filter(num => num % 2 > 0);
+console.log('myArr', filterd);
+
