@@ -54,6 +54,7 @@ class User {
       this.age = age;
       this.status = status;
       this.messageCount = 0;
+      this.userCount = 0;
    }
 
    get name() {
@@ -66,6 +67,10 @@ class User {
          return;
       }
       this._name = val;
+   }
+
+   static craeteAnonUser() {
+      return new User('Anon', '', '');
    }
 
    writeMessage(text) {
@@ -95,9 +100,26 @@ class Admin extends User {
    }
 }
 
-const admin1 = new Admin('Lena', 25, 'online', 1);
+class CoffeeMachin {
+   #watterAmount = 100;
+   constructor(power) {
+      this._power = power;
+   }
 
-admin1.writeMessage('Hello there');
-admin1.checkData();
-console.log('lala', admin1.countMessages());
-console.log(admin1.adminLevel)
+   // #checkWatter(value) {
+   //  if (value < 0) throw new Error("Отрицательный уровень воды");
+   //  if (value > this.#waterLimit) throw new Error("Слишком много воды");
+   // }
+
+   get power() {
+      return this._power;
+   }
+}
+
+const superCM = new CoffeeMachin(150);
+
+superCM.power = 123;
+// superCM.#checkWatter();
+superCM.#watterLimit = 1000;
+
+console.log('superCM.power', superCM.power);
