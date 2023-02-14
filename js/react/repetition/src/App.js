@@ -1,10 +1,11 @@
 import { Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home';
-import Booklist from './pages/Booklist';
-import Book from './pages/Book';
-import NewBook from './pages/NewBook';
+import Book from './pages/books/Book';
+import NewBook from './pages/books/NewBook';
 import NotFound from './pages/NotFound';
+import BooksLayout from './pages/books/BooksLayout';
+import AppRoutes from './router';
 
 function App() {
   return (
@@ -19,13 +20,7 @@ function App() {
             </li>
           </ul>
         </nav>
-        <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path='/books' element={<Booklist/>}/>
-          <Route path='/books/:id' element={<Book/>}/>
-          <Route path='/books/new' element={<NewBook/>}/>
-          <Route path='*' element={<NotFound/>}/>
-        </Routes>
+        <AppRoutes/>
       </>
   );
 }
