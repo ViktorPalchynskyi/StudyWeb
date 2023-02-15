@@ -1,20 +1,25 @@
-import { Link } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 function BookList() {
    const booksIds = [1, 2, 3];
+   const locationData = useLocation();
+   const changeStyle = ({ isActive }) => ({ color: isActive ? 'tomato' : 'white' });
+   console.log('locationData', locationData);
    return (
-      <nav>
-         <ul>
-            {booksIds.map((bookId, index) => (
-               <li key={index}>
-                  <Link to={`${bookId}`} >Book #{bookId}.</Link>
+      <>
+         <nav>
+            <ul>
+               {booksIds.map((bookId, index) => (
+                  <li key={index}>
+                     <NavLink style={changeStyle} replace to={`${bookId}`} >Book #{bookId}.</NavLink>
+                  </li>
+               ))}
+               <li>
+                  <NavLink style={changeStyle} reloadDocument to='new'>New Book</NavLink>
                </li>
-            ))}
-            <li>
-               <Link to='new'>New Book</Link>
-            </li>
-         </ul>
-      </nav >
+            </ul>
+         </nav >
+      </>
    );
 }
 
