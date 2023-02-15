@@ -2,9 +2,8 @@ import { NavLink, useLocation } from "react-router-dom";
 
 function BookList() {
    const booksIds = [1, 2, 3];
-   const locationData = useLocation();
+   // const locationData = useLocation();
    const changeStyle = ({ isActive }) => ({ color: isActive ? 'tomato' : 'white' });
-   console.log('locationData', locationData);
    return (
       <>
          <nav>

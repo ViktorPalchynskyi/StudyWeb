@@ -8,7 +8,8 @@ function BooksRouter() {
    return (
       <Routes>
          <Route element={<BooksLayout />}>
-            <Route index element={<BookList />} />
+            {/* <Route index element={<BookList />} /> */}
+            <Route index element={<h1>Books Page</h1>} />
             <Route path=':id' element={<Book />} />
             <Route path='new' element={<NewBook />} />
          </Route>
