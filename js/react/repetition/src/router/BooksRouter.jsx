@@ -6,13 +6,10 @@ import BooksLayout from '../pages/books/BooksLayout';
 import BooksPage from '../pages/books/BooksPage';
 
 function BooksRouter() {
-
-   const booksRef = React.createRef();
-
    return (
       <Routes>
          <Route element={<BooksLayout />}>
-            <Route index element={<BooksPage ref={booksRef} />} />
+            <Route index element={<BooksPage />} />
             <Route path=':id' element={<Book />} />
             <Route path='new' element={<NewBook />} />
          </Route>

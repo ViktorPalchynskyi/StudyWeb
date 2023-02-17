@@ -1,17 +1,24 @@
 import React from 'react';
 
-function BooksPage({ ref }) {
-   const fancyBooksPage = React.forwardRef((props, ref) => (
+function BooksPage() {
+   const ref = React.createRef();
+   const FancyButton = React.forwardRef((props, ref) => (
       <>
-         <h1>Books Page</h1>
          <input type='text' placeholder='fill me' ref={ref} />
-         <button onClick={focusOnInput}>Click to focus on input</button>
+         <button onClick={focusOnInput} className="FancyButton">
+            {props.children}
+         </button>
       </>
-   ))
+   ));
 
    const focusOnInput = () => ref.current.focus();
 
-   return fancyBooksPage;
+   return (
+      <>
+         <h1>Books Page</h1>
+         <FancyButton ref={ref}>Click me to focus on input</FancyButton>;
+      </>
+   );
 }
 
 export default BooksPage;

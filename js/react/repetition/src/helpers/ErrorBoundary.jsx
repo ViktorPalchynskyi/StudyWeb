@@ -4,11 +4,11 @@ import { ThemeContext } from '../context/Theme.contex';
 class ErrorBoundary extends React.Component {
    constructor(props) {
       super(props);
-      this.state = { hasErrors: false, isHuesos: false };
+      this.state = { hasErrors: false };
    }
 
    static getDerivedStateFromError(error) {
-      return { hasErrors: true, isHuesos: true };
+      return { hasErrors: true };
    }
 
    componentDidCatch(error, errorInfo) {
