@@ -5,7 +5,6 @@ import AppRoutes from './router';
 
 function App() {
   const [theme] = useTheme(); 
-  console.log('theme ==> App', theme);
   return (
       <div style={{color: theme.color, backgroundColor: theme.backgroundColor}}>
         <nav>
