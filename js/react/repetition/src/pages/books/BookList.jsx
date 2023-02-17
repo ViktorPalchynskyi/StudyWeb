@@ -14,7 +14,7 @@ function BookList() {
                   </li>
                ))}
                <li>
-                  <NavLink style={changeStyle} reloadDocument to='new'>New Book</NavLink>
+                  <NavLink style={changeStyle} to='new'>New Book</NavLink>
                </li>
             </ul>
          </nav >
