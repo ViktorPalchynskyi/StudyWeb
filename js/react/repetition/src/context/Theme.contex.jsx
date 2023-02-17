@@ -36,6 +36,7 @@ const useTheme = () => {
 const toggleColor = type => type === 'light' ? themes.dark : themes.light;
 
 export {
+   ThemeContext,
    ThemeProvider,
    useTheme,
    toggleColor,

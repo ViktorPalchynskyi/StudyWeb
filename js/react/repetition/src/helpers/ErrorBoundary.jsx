@@ -1,4 +1,5 @@
 import React from 'react';
+import { ThemeContext } from '../context/Theme.contex';
 
 class ErrorBoundary extends React.Component {
    constructor(props) {
@@ -15,12 +16,14 @@ class ErrorBoundary extends React.Component {
    }
 
    render() {
-      console.log(this.state);
+      console.log(this.context);
       if (this.state.hasErrors) {
-         return <h1>Code related error</h1>;
+         return <h1 style={{ color: this.context[0].color }}>Code related error</h1>;
       }
       return this.props.children
    }
 }
+
+ErrorBoundary.contextType = ThemeContext;
 
 export default ErrorBoundary;
