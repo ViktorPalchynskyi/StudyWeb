@@ -49,7 +49,7 @@ let display: 'flex' = 'flex';
 
 // Uninon type
 
-let fontWeight2: 500 | 600 | 700 = 500;
+let fontWeight2: 500 | 600 | 700 | 'bold' = 500;
 let display2: 'flex' = 'flex';
 
 let strNum: string | number = 123;
