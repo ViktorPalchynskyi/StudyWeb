@@ -1,6 +1,14 @@
-export const toUpperCase = (text) => {
-    return text.toUpperCase();
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.toUpperCase = void 0;
+var toUpperCase = function toUpperCase(text) {
+  return text.toUpperCase();
 };
-let tmp = 'string';
+exports.toUpperCase = toUpperCase;
+var tmp = 'string';
 tmp = '2';
 console.log(toUpperCase(tmp));
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJ0b1VwcGVyQ2FzZSIsInRleHQiLCJ0bXAiLCJjb25zb2xlIiwibG9nIl0sInNvdXJjZXMiOlsiLi4vc3JjL21vZHVsZTEudHMiXSwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IHRvVXBwZXJDYXNlID0gKHRleHQ6IHN0cmluZykgPT4ge1xyXG4gICByZXR1cm4gdGV4dC50b1VwcGVyQ2FzZSgpO1xyXG59XHJcblxyXG5sZXQgdG1wOiBzdHJpbmcgPSAnc3RyaW5nJztcclxuXHJcbnRtcCA9ICcyJztcclxuXHJcbmNvbnNvbGUubG9nKHRvVXBwZXJDYXNlKHRtcCkpOyJdLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQU8sSUFBTUEsV0FBVyxHQUFHLFNBQWRBLFdBQVcsQ0FBSUMsSUFBWSxFQUFLO0VBQzFDLE9BQU9BLElBQUksQ0FBQ0QsV0FBVyxFQUFFO0FBQzVCLENBQUM7QUFBQTtBQUVELElBQUlFLEdBQVcsR0FBRyxRQUFRO0FBRTFCQSxHQUFHLEdBQUcsR0FBRztBQUVUQyxPQUFPLENBQUNDLEdBQUcsQ0FBQ0osV0FBVyxDQUFDRSxHQUFHLENBQUMsQ0FBQyJ9

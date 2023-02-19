@@ -4,11 +4,13 @@
     "strict": true,
     "moduleResolution": "node",
     "allowJs": true,
+    "checkJs": true,
     "esModuleInterop": true,
     "isolatedModules": true,
     "outDir": "lib",
-    "experimentalDecorators": true,
-    "declaration": true
+    // "experimentalDecorators": true,
+    "declaration": true,
+    // "emitDeclarationOnly": true,
   },
   "include": ["src/**/*"],
   // "exclude": []

@@ -1,4 +1,2 @@
-export {};
-// export type Partial2 = Partial;
-// export type Partial3 = Omit;
-// export type Partial4 = Pick;
+"use strict";
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6W10sInNvdXJjZXMiOlsiLi4vc3JjL21vZHVsZTEwLnRzIl0sInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCB0eXBlIFBhcnRpYWwgPSBudW1iZXI7XHJcbi8vIGV4cG9ydCB0eXBlIFBhcnRpYWwyID0gUGFydGlhbDtcclxuLy8gZXhwb3J0IHR5cGUgUGFydGlhbDMgPSBPbWl0O1xyXG4vLyBleHBvcnQgdHlwZSBQYXJ0aWFsNCA9IFBpY2s7Il0sIm1hcHBpbmdzIjoiIn0=

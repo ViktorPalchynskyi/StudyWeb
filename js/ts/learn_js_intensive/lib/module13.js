@@ -1,8 +1,10 @@
-const craeteLabel = (label) => {
-    throw '';
+"use strict";
+
+var craeteLabel = function craeteLabel(label) {
+  throw '';
 };
-const a = craeteLabel(123);
-const b = craeteLabel('123');
+var a = craeteLabel(123);
+var b = craeteLabel('123');
 a.id;
 b.name;
-export {};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJjcmFldGVMYWJlbCIsImxhYmVsIiwiYSIsImIiLCJpZCIsIm5hbWUiXSwic291cmNlcyI6WyIuLi9zcmMvbW9kdWxlMTMudHMiXSwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGludGVyZmFjZSBJZExhYmVsIHtcclxuICAgaWQ6IG51bWJlcjtcclxufVxyXG5cclxuaW50ZXJmYWNlIE5hbWVMYWJlbCB7XHJcbiAgIG5hbWU6IHN0cmluZztcclxufVxyXG5cclxudHlwZSBOYW1lSWQ8TGFiZWwgZXh0ZW5kcyBzdHJpbmcgfCBudW1iZXI+ID0gTGFiZWwgZXh0ZW5kcyBudW1iZXIgPyBJZExhYmVsIDogTmFtZUxhYmVsO1xyXG5cclxuY29uc3QgY3JhZXRlTGFiZWwgPSA8TGFiZWwgZXh0ZW5kcyBzdHJpbmcgfCBudW1iZXI+KGxhYmVsOiBMYWJlbCk6IE5hbWVJZDxMYWJlbD4gPT4ge1xyXG4gICB0aHJvdyAnJztcclxufTtcclxuXHJcbmNvbnN0IGEgPSBjcmFldGVMYWJlbCgxMjMpO1xyXG5jb25zdCBiID0gY3JhZXRlTGFiZWwoJzEyMycpXHJcblxyXG5hLmlkO1xyXG5iLm5hbWU7Il0sIm1hcHBpbmdzIjoiOztBQVVBLElBQU1BLFdBQVcsR0FBRyxTQUFkQSxXQUFXLENBQW1DQyxLQUFZLEVBQW9CO0VBQ2pGLE1BQU0sRUFBRTtBQUNYLENBQUM7QUFFRCxJQUFNQyxDQUFDLEdBQUdGLFdBQVcsQ0FBQyxHQUFHLENBQUM7QUFDMUIsSUFBTUcsQ0FBQyxHQUFHSCxXQUFXLENBQUMsS0FBSyxDQUFDO0FBRTVCRSxDQUFDLENBQUNFLEVBQUU7QUFDSkQsQ0FBQyxDQUFDRSxJQUFJIn0=

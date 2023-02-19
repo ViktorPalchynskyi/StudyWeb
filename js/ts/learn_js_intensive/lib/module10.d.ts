@@ -1,1 +1,1 @@
-export declare type Partial = number;
+export type Partial = number;

@@ -1,12 +1,25 @@
-const owner = { name: 'Viktor', age: 25 };
-const cat = { name: 'Gav Gav' };
-export const dog = {
-    weight: 12,
-    color: 'fawn',
-    owner
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.dog = void 0;
+var owner = {
+  name: 'Viktor',
+  age: 25
 };
-const corgi = {
-    weight: 9,
-    color: 'golden',
-    owner
+var cat = {
+  name: 'Gav Gav'
 };
+var dog = {
+  weight: 12,
+  color: 'fawn',
+  owner: owner
+};
+exports.dog = dog;
+var corgi = {
+  weight: 9,
+  color: 'golden',
+  owner: owner
+};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJvd25lciIsIm5hbWUiLCJhZ2UiLCJjYXQiLCJkb2ciLCJ3ZWlnaHQiLCJjb2xvciIsImNvcmdpIl0sInNvdXJjZXMiOlsiLi4vc3JjL21vZHVsZTQudHMiXSwic291cmNlc0NvbnRlbnQiOlsiaW50ZXJmYWNlIE93bmVyIHtcclxuICAgbmFtZTogc3RyaW5nO1xyXG4gICBhZ2U6IG51bWJlcjtcclxufVxyXG5cclxuaW50ZXJmYWNlIFBldCB7XHJcbiAgIG93bmVyPzogT3duZXI7XHJcbn1cclxuXHJcbmludGVyZmFjZSBBbmltYWwge1xyXG4gICByZWFkb25seSBjb2xvcjogc3RyaW5nO1xyXG59XHJcblxyXG5pbnRlcmZhY2UgRG9nIGV4dGVuZHMgUGV0LCBBbmltYWwge1xyXG4gICB3ZWlnaHQ6IG51bWJlcjtcclxuICAgY29sb3I6ICdibGFjaycgfCAnd2hpdGUnIHwgJ2Zhd24nIHwgJ2dvbGRlbic7XHJcbn1cclxuXHJcbmludGVyZmFjZSBDYXQgZXh0ZW5kcyBQZXQge1xyXG4gICBuYW1lOiBzdHJpbmc7XHJcbn1cclxuXHJcbmNvbnN0IG93bmVyOiBPd25lciA9IHsgbmFtZTogJ1Zpa3RvcicsIGFnZTogMjUgfTtcclxuXHJcbmNvbnN0IGNhdDogQ2F0ID0geyBuYW1lOiAnR2F2IEdhdicgfTtcclxuXHJcbmV4cG9ydCBjb25zdCBkb2c6IERvZyA9IHtcclxuICAgd2VpZ2h0OiAxMixcclxuICAgY29sb3I6ICdmYXduJyxcclxuICAgb3duZXJcclxufTtcclxuXHJcbmNvbnN0IGNvcmdpOiBEb2cgPSB7XHJcbiAgIHdlaWdodDogOSxcclxuICAgY29sb3I6ICdnb2xkZW4nLFxyXG4gICBvd25lclxyXG59OyJdLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBc0JBLElBQU1BLEtBQVksR0FBRztFQUFFQyxJQUFJLEVBQUUsUUFBUTtFQUFFQyxHQUFHLEVBQUU7QUFBRyxDQUFDO0FBRWhELElBQU1DLEdBQVEsR0FBRztFQUFFRixJQUFJLEVBQUU7QUFBVSxDQUFDO0FBRTdCLElBQU1HLEdBQVEsR0FBRztFQUNyQkMsTUFBTSxFQUFFLEVBQUU7RUFDVkMsS0FBSyxFQUFFLE1BQU07RUFDYk4sS0FBSyxFQUFMQTtBQUNILENBQUM7QUFBQztBQUVGLElBQU1PLEtBQVUsR0FBRztFQUNoQkYsTUFBTSxFQUFFLENBQUM7RUFDVEMsS0FBSyxFQUFFLFFBQVE7RUFDZk4sS0FBSyxFQUFMQTtBQUNILENBQUMifQ==

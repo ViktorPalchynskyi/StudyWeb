@@ -1,4 +1,4 @@
-export declare type Error = {
+export type Error = {
     type: string;
     [key: string]: unknown;
 };
