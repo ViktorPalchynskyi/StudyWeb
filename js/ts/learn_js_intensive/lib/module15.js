@@ -6,7 +6,6 @@ export const nuni = 123;
 //       // logic
 //    }
 // }
-
 // function Logger(test: string) {
 //    return (target: Object, propertyName: string, descriptor: PropertyDescriptor) => {
 //       const method = descriptor.value;
@@ -20,35 +19,25 @@ export const nuni = 123;
 //       }
 //    };
 // }
-
 // type Constructor = new (...args: any[]) => {};
-
 // @Injectable({
 //    providerIn: 'root'
 // })
 // class UserService { }
-
 // interface InfectOptions {
 //    providerIn: string;
-
 // }
-
 // const injectableMetaKey = 'InjectableMeta';
-
 // function Injectable(options: InfectOptions) {
 //    return (ctor: Constructor) => {
 //       Reflect.difeneMetadata(injectableMetaKey, options, ctor)
 //    }
 // };
-
 // function isInectOptions(metadata: unknown): metadata is InfectOptions {
 //    const injectOptions = metadata as InfectOptions;
-
 //    return 'prvodeIn' in injectOptions;
 // }
-
 // const RootInstanceMap = new Map();
-
 // function getInstance<T>(ctor: new () => T): T {
 //    const metadata = Reflect.getMetadata(injectableMetaKey, ctor);
 //    if (!metadata || !isInectOptions(metadata)) {
