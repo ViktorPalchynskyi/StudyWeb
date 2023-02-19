@@ -1,6 +1,11 @@
+abstract class Animal {
+   constructor(public height: number, public weight: number) { };
+
+   abstract move(): void;
+}
+
 export class Dog {
-   public name: string;
-   constructor(public color: string, name: string) {
+   constructor(private color: string, public name: string) {
       this.name = name;
    }
 }
