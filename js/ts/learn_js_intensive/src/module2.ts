@@ -33,7 +33,8 @@ anyLet = 12;
 anyLet = () => console.log('lox');
 
 //
-let unknownLet: unknown = { a: '' };
+let unknownLet: unknown = anyLet;
+let moreAny: any = unknownLet;
 
 // безопасная версия any, использовать, когда тип, который приходит с бэка неизвестен
 // unknownLet.a;
@@ -42,6 +43,7 @@ let unknownLet: unknown = { a: '' };
 // void - когда в функции нет return;
 
 // never
+
 
 // Literal type
 let fontWeight: 500 = 500;
