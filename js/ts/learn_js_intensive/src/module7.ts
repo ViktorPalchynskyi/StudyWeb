@@ -10,12 +10,12 @@ export class Dog {
    }
 }
 
-class SuperDog extends Dog {
-   constructor(public color: string, name: string) {
-      super(name, color);
-   }
-}
+// class SuperDog extends Dog {
+//    constructor(public color: string, name: string) {
+//       super(name, color);
+//    }
+// }
 
 const dog = new Dog('black', 'gav gav');
-const dog1 = new SuperDog('black', 'gav gav');
-dog.color;
+// const dog1 = new SuperDog('black', 'gav gav');
+// dog.color;
