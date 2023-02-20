@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    // В какую версию JS будет компилироваться TS
+   "target": "ES2020",
+   // Максимальная строгость проверки TS
+   "strict": true,
+   // всегда ставить node
+   "moduleResolution": "node",
+   // Разрешает импортировать JS файлы
+   "allowJs": true,
+   // Проверяет валидность JS при экспорте в файлы TS
+   "checkJs": true,
+   "esModuleInterop": true,
+   // Папка в которую компилируется готовый JS
+   "outDir": "dir",
+   // Компилирует файл деклорации типов
+   "declaration": true,
+  },
+  "include": ["src/**/*"]
+}
