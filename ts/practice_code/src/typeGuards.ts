@@ -70,7 +70,7 @@ function walk(animal: unknown): void {
    }
 }
 
-// 
+// 7 
 
 interface MyCircleNode {
    type: 'circle';
