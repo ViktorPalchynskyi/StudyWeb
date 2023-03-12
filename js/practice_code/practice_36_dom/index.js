@@ -3,18 +3,16 @@ const div2 = document.querySelector('.buya');
 const body = document.body;
 const input1 = document.getElementById('input1');
 
-console.log(body.nodeName);
-console.log(div.nodeName);
-console.log(document.nodeName);
+console.log(div2.className);
 
-div2.innerHTML = `<p>lorem</p>`;
+div2.classList.add('buyaya');
 
-console.log(div2.outerHTML);
+console.log(div2.className);
 
-div2.outerHTML = `<p>New elem</p>`;
-body.append(div2);
-console.log(body.firstChild.data);
+setTimeout(() => div2.classList.remove('buyaya'), 2000);
 
-console.log(body.firstChild.textContent = '<p>misha</p>');
+setInterval(() => div2.classList.toggle('buyaya'), 1000);
 
-setTimeout(() => div2.hidden = true, 2000);
+const bodyStyle =getComputedStyle(body);
+
+console.log(bodyStyle.backgroundColor);
