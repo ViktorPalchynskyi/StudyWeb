@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+       .order[data-order-state="new"] {
+        color: green;
+       }
+       .order[data-order-state="pending"] {
+        color: blue;
+       }
+       .order[data-order-state="canceled"] {
+        color: red;
+       }
+   </style>
+</head>
+<body id="123" some="nana">
+   <input type="text" value="Vika" id="input1">
+   <div class="buya" style="background-color: coral; font-size: 25px;">
+      <h2>Buyaa</h2>
+   </div>
+   <a href="#">Lala</a>
+   <div class="order" data-order-state="new">
+       A new order.
+   </div>
+      
+   <div class="order" data-order-state="pending">
+      A pending order.
+   </div>
+      
+   <div class="order" data-order-state="canceled">
+      A canceled order.
+   </div>
+</body>
+<script src="./index.js"></script>
+</html>
