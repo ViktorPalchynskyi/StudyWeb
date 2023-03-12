@@ -2,17 +2,28 @@ const div = document.createElement('div');
 const div2 = document.querySelector('.buya');
 const body = document.body;
 const input1 = document.getElementById('input1');
+const img = document.getElementById('img');
 
-console.log(div2.className);
+console.log(document.readyState);
 
-div2.classList.add('buyaya');
 
-console.log(div2.className);
+document.addEventListener('DOMContentLoaded', () => {
+   console.log('DOM is ready');
+   console.log(`Размер изображения: ${img.offsetWidth}x${img.offsetHeight}`);
+});
 
-setTimeout(() => div2.classList.remove('buyaya'), 2000);
+window.onload = () => {
+   console.log(`Размер изображения: ${img.offsetWidth}x${img.offsetHeight}`);
+};
 
-setInterval(() => div2.classList.toggle('buyaya'), 1000);
+window.addEventListener('unload', () => {
+   navigator.sendBeacon('#', JSON.stringify({name: 'viktor'}));
+});
 
-const bodyStyle =getComputedStyle(body);
+// window.addEventListener('beforeunload', () => false);
 
-console.log(bodyStyle.backgroundColor);
+// window.onbeforeunload = function() {
+//    return false;
+// };
+
+document.addEventListener('readystatechange', () => console.log(document.readyState));
