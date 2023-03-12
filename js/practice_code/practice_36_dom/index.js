@@ -3,30 +3,18 @@ const div2 = document.querySelector('.buya');
 const body = document.body;
 const input1 = document.getElementById('input1');
 
-div.innerHTML = `<h1>Hello there</h1>`;
+console.log(body.nodeName);
+console.log(div.nodeName);
+console.log(document.nodeName);
 
-body.append(div);
-body.sayMyName = function () {
-   alert(this.tagName);
-};
+div2.innerHTML = `<p>lorem</p>`;
 
-body.setAttribute('style', 'color: skyblue');
+console.log(div2.outerHTML);
 
-setTimeout(() => body.removeAttribute('style'), 2000);
+div2.outerHTML = `<p>New elem</p>`;
+body.append(div2);
+console.log(body.firstChild.data);
 
+console.log(body.firstChild.textContent = '<p>misha</p>');
 
-input1.setAttribute('value', 'Natasha');;
-
-setTimeout(() => {
-   input1.value = 'larisa'
-}, 1000);
-
-const orders = document.querySelectorAll('.order');
-
-orders.forEach((order) => {
-   order.setAttribute('data-order-state', 'new');
-   console.log(order.getAttribute('data-order-state'));
-   
-});
-
-orders[0].dataset.orderState = 'pending';
+setTimeout(() => div2.hidden = true, 2000);
