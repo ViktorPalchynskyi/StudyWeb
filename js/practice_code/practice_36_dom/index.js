@@ -1,7 +1,7 @@
 // import { admin } from './src/test/test.js';
 // import * as say from './src/test/say.js';
 // import { sayHi, sayBuy } from './src/test/say.js';
-import Vitya from './src/test/user.js';
+import User from './src/test/user.js';
 
 const div = document.createElement('div');
 const div2 = document.querySelector('.buya');
@@ -9,25 +9,31 @@ const body = document.body;
 const input1 = document.getElementById('input1');
 const img = document.getElementById('img');
 
-console.log('wtf?');
+console.log('navigator', navigator.userAgent);
 
-// console.log('admin', admin.name);
-console.log(import.meta.url);
+const button = document.createElement('button');
 
-// say.sayHi();
-// say.sayBuy();
+button.innerText = 'Click me';
 
-const vityan = new Vitya('Viktor', 25);
-vityan.sayMyName();
+button.style.backgroundColor = 'violet';
 
-if (vityan.age > 20) {
-   import('./src/test/say.js')
-      .then((res) =>
-         res.sayHi()
-      );
-} else {
-   import('./src/test/say.js')
-      .then((res) =>
-         res.sayBuy()
-      );
-}
+div2.before(button);
+
+button.addEventListener('click', () => {
+   location.href = 'https://github.com/ViktorPalchynskyi'
+});
+
+const div3 = document.createElement('div');
+
+div3.innerHTML = `
+   <p>Hello there</p>
+   <button>Click me too</button>
+`;
+
+div2.insertAdjacentElement('afterbegin', div3);
+
+const clone = div3.cloneNode(true);
+
+setTimeout(()=> div3.remove(), 2000);
+
+body.append(clone);
