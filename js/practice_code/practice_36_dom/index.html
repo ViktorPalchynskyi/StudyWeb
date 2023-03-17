@@ -28,11 +28,17 @@
        body { 
          background-color: coral;
        }
+
+       .test {
+         width: 100px;
+         height: 100px;
+         background-color: skyblue;
+       }
    </style>
 </head>
-<body id="123" some="nana">
+<body oncopy="alert('A vot huy tebe');return false" id="123" some="nana">
    <input type="text" value="Vika" id="input1">
-   <div class="buya">
+   <div ondblclick="return false" onmousedown="return false" class="buya">
       <h2>Buyaa</h2>
    </div>
    <a href="#">Lala</a>
@@ -48,6 +54,9 @@
       A canceled order.
    </div>
    <img " id="img" src="https://en.js.cx/clipart/train.gif?speed=10&cache=0">
+   <div class="test">
+
+   </div>
 </body>
 
 <script type="module" src="./index.js"></script>

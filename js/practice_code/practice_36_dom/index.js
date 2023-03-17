@@ -22,11 +22,28 @@ div3.innerHTML = `
 `;
 div2.insertAdjacentElement('afterbegin', div3);
 
+const testDiv = document.querySelector('.test');
 
-for (const child of body.children) {
-   if (child.matches('.order')) {
-      console.log('child', child);
+testDiv.addEventListener('pointerdown', (event) => {
+   console.log('pointerdown', event.button);
+});
+
+testDiv.addEventListener('pointerup', (event) => {
+   console.log('pointerup', event.button);
+});
+
+testDiv.addEventListener('click', (event) => {
+   console.log('click', event.button);
+   if (event.altKey) {
+      console.log('click with alt');
    }
-   console.log(child.closest('.buya'));
-}
+
+   if (event.shiftKey) {
+      console.log('click with shitKey');
+   }
+
+   if (event.ctrlKey) {
+      console.log('click with ctrlKey');
+   }
+});
 
