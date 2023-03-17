@@ -25,11 +25,31 @@ div2.insertAdjacentElement('afterbegin', div3);
 const testDiv = document.querySelector('.test');
 
 testDiv.addEventListener('mouseover', (event) => {
+   if (event.target.classList.contains('testInside'))
    event.target.style.background = 'pink';
 });
 
 testDiv.addEventListener('mouseout', (event) => {
+   if (event.target.classList.contains('testInside'))
    event.target.style.background = '';
 });
 
+testDiv.addEventListener('click', (event) => {
+   event.stopPropagation();
+   event.stopImmediatePropagation();
+   console.log('ha');
+});
+
+testDiv.addEventListener('click', (event) => {
+   console.log('ho');
+});
+
+document.body.addEventListener('contextmenu', (event) => {
+   event.preventDefault();
+   alert('Click')
+});
+
+document.body.addEventListener('click', (event) => {
+   alert('Jajajaj')
+});
 
