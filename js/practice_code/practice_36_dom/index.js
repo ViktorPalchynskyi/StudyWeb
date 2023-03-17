@@ -24,26 +24,12 @@ div2.insertAdjacentElement('afterbegin', div3);
 
 const testDiv = document.querySelector('.test');
 
-testDiv.addEventListener('pointerdown', (event) => {
-   console.log('pointerdown', event.button);
+testDiv.addEventListener('mouseover', (event) => {
+   event.target.style.background = 'pink';
 });
 
-testDiv.addEventListener('pointerup', (event) => {
-   console.log('pointerup', event.button);
+testDiv.addEventListener('mouseout', (event) => {
+   event.target.style.background = '';
 });
 
-testDiv.addEventListener('click', (event) => {
-   console.log('click', event.button);
-   if (event.altKey) {
-      console.log('click with alt');
-   }
-
-   if (event.shiftKey) {
-      console.log('click with shitKey');
-   }
-
-   if (event.ctrlKey) {
-      console.log('click with ctrlKey');
-   }
-});
 

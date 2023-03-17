@@ -30,9 +30,19 @@
        }
 
        .test {
-         width: 100px;
-         height: 100px;
+         width: 200px;
+         height: 200px;
          background-color: skyblue;
+         display: flex;
+         justify-content: flex-start;
+         align-items: center;
+       }
+
+       .testInside {
+         width: 49px;
+         height: 49px;
+         background-color: aquamarine;
+         border: 1px black solid;
        }
    </style>
 </head>
@@ -55,7 +65,10 @@
    </div>
    <img " id="img" src="https://en.js.cx/clipart/train.gif?speed=10&cache=0">
    <div class="test">
-
+      <div class="testInside"></div>
+      <div class="testInside"></div>
+      <div class="testInside"></div>
+      <div class="testInside"></div>
    </div>
 </body>
 
