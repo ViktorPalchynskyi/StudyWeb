@@ -54,6 +54,20 @@
          height: 50px;
          background-color: antiquewhite;
        }
+
+       .keyTest {
+         width: 400px;
+         height: 200px;
+         background-color: skyblue;
+         display: flex;
+         justify-content: flex-start;
+         align-items: flex-end;
+       }
+
+       .keyInput {
+         width: 100%;
+         height: 30%;
+       }
    </style>
 </head>
 <body oncopy="alert('A vot huy tebe');return false" id="123" some="nana">
@@ -101,8 +115,12 @@
       Your email: <input type="email">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam odio sequi accusamus eligendi sit amet fugiat fugit ab vitae, mollitia vero. Adipisci ex quis, omnis sit aliquid iure quibusdam rem.</p>
    </form>
+   <div class="keyTest" >
+      <input id="keyPractive" class="keyInput" type="text" value="type something">
+   </div>
 </body>
 
 <script type="module" src="./index.js"></script>
+<script type="module" src="./events.js"></script>
 
 </html>
