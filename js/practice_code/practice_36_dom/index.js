@@ -1,13 +1,9 @@
 // import { admin } from './src/test/test.js';
 // import * as say from './src/test/say.js';
 // import { sayHi, sayBuy } from './src/test/say.js';
-import User from './src/test/user.js';
-
-const div = document.createElement('div');
+import { Menu } from "./src/test/Menu.js";
 const div2 = document.querySelector('.buya');
-const body = document.body;
-const input1 = document.getElementById('input1');
-const img = document.getElementById('img');
+
 const button = document.createElement('button');
 button.innerText = 'Click me';
 button.style.backgroundColor = 'violet';
@@ -22,34 +18,56 @@ div3.innerHTML = `
 `;
 div2.insertAdjacentElement('afterbegin', div3);
 
-const testDiv = document.querySelector('.test');
+const parentDiv = document.querySelector('.test');
 
-testDiv.addEventListener('mouseover', (event) => {
-   if (event.target.classList.contains('testInside'))
-   event.target.style.background = 'pink';
+parentDiv.addEventListener('mouseover', (event) => {
+   const targetElem = event.target.closest('.testInside');
+   
+   if (!targetElem) return;
+   
+   targetElem.style.background = 'pink';
 });
 
-testDiv.addEventListener('mouseout', (event) => {
-   if (event.target.classList.contains('testInside'))
-   event.target.style.background = '';
+parentDiv.addEventListener('mouseout', (event) => {
+   const targetElem = event.target.closest('.testInside');
+   
+   if (!targetElem) return;
+   
+   targetElem.style.background = '';
 });
 
-testDiv.addEventListener('click', (event) => {
-   event.stopPropagation();
-   event.stopImmediatePropagation();
-   console.log('ha');
+parentDiv.addEventListener('click', (event) => {
+   const targetElem = event.target.closest('.testInside');
+   
+   if (!targetElem) return;
+
+   console.log('targetElem', targetElem.dataset.menu);
+   targetElem.style.display = 'none';
 });
 
-testDiv.addEventListener('click', (event) => {
-   console.log('ho');
+const menu = document.querySelector('.menu');
+
+new Menu(menu);
+
+document.addEventListener('click', (event) => {
+   const target = event.target
+
+   if (target.hasAttribute('data-counter')) target.value++;
+
+   if (target.hasAttribute('data-togle-id')) {
+      const id = target.dataset.togleId;
+      const form = document.getElementById(id);
+      form.hidden = !form.hidden;
+   }
 });
 
-document.body.addEventListener('contextmenu', (event) => {
+parentDiv.addEventListener('contextmenu', (event) => {
    event.preventDefault();
-   alert('Click')
+   alert('context on parentDiv');
 });
 
-document.body.addEventListener('click', (event) => {
-   alert('Jajajaj')
+document.addEventListener('contextmenu', (event) => {
+   if (event.defaultPrevented) return;
+   event.preventDefault();
+   alert('context on document');
 });
-

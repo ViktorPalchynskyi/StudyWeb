@@ -30,8 +30,8 @@
        }
 
        .test {
-         width: 200px;
-         height: 200px;
+         width: 400px;
+         height: 400px;
          background-color: skyblue;
          display: flex;
          justify-content: flex-start;
@@ -39,10 +39,20 @@
        }
 
        .testInside {
-         width: 49px;
-         height: 49px;
+         width:99px;
+         height: 99px;
          background-color: aquamarine;
          border: 1px black solid;
+         text-align: center;
+       }
+
+       .menu {
+         display: flex;
+         justify-content: space-evenly;
+         align-items: center;
+         width: 400px;
+         height: 50px;
+         background-color: antiquewhite;
        }
    </style>
 </head>
@@ -65,11 +75,32 @@
    </div>
    <img " id="img" src="https://en.js.cx/clipart/train.gif?speed=10&cache=0">
    <div class="test">
-      <div class="testInside"></div>
-      <div class="testInside"></div>
-      <div class="testInside"></div>
-      <div class="testInside"></div>
+      <div class="testInside" data-menu="item1">
+         <p><b>item1</b> some text to fill in the box, and some more to</p>
+      </div>
+      <div class="testInside" data-menu="item2">
+         <p><b>item2</b> some text to fill in the box, and some more to</p>
+      </div>
+      <div class="testInside" data-menu="item3">
+         <p><b>item3</b> some text to fill in the box, and some more to</p>
+      </div>
+      <div class="testInside" data-menu="item4">
+         <p><b>item4</b> some text to fill in the box, and some more to</p>
+      </div>
    </div>
+
+   <div class="menu">
+      <button data-action="save">Save</button>
+      <button data-action="load">Load</button>
+      <button data-action="search">Search</button>
+      <button data-togle-id="subscribe-mail">Toggle</button>
+      <input type="button" value="1" data-counter>
+      <input type="button" value="2" data-counter>
+   </div>
+   <form action="" id="subscribe-mail" hidden>
+      Your email: <input type="email">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam odio sequi accusamus eligendi sit amet fugiat fugit ab vitae, mollitia vero. Adipisci ex quis, omnis sit aliquid iure quibusdam rem.</p>
+   </form>
 </body>
 
 <script type="module" src="./index.js"></script>
