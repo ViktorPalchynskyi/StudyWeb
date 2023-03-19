@@ -16,5 +16,5 @@ document.addEventListener('keyup', (event) => {
 });
 
 window.addEventListener('scroll', (event) => {
-   testInput.value = pageYOffset + 'px';
+   testScroll.value = pageYOffset + 'px';
 });
